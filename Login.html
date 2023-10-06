@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            background-color: white;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .top-nav {
+            background-color: grey;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: absolute;
+            top: 1px;
+            width: 100%;
+            box-sizing: border-box;
+            border-radius: 10px 10px 10px 10px;
+        }
+
+        .top-nav a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .top-nav a:hover {
+            background-color: lightgray;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        .login-bubble {
+            background-color: rgb(202, 202, 202);
+            padding: 40px;
+            border-radius: 20px;
+            width: 200px;
+            text-align: center;
+        }
+
+        .btn {
+            background-color: blue;
+            padding: 10px 20px;
+            border: none;
+            color: rgb(255, 255, 255);
+            cursor: pointer;
+            display: block;
+            margin: 20px auto;
+        }
+
+        .btn:hover {
+            background-color: darkblue;
+        }
+
+        .light-blue {
+            color: rgb(72, 209, 255);
+            margin: 20px 0;
+        }
+
+        .input-fields input {
+            margin-top: 10px;
+            padding: 10px;
+            width: 100%;
+            box-sizing: border-box;
+            font-weight: normal;
+        }
+
+        /* Descendant Selector */
+        .login-bubble p:not(.light-blue) {
+            margin-bottom: 5px;
+        }
+
+        /* Child Selector */
+        .login-bubble > p:not(.light-blue) {
+            margin-top: 5px;
+        }
+
+        /* Adjacent Sibling Selector */
+        .login-bubble div + p:not(.light-blue) {
+            color: grey;
+        }
+
+        /* General Sibling Selector */
+        .login-bubble div ~ p.light-blue {
+            text-decoration: underline;
+        }
+
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="top-nav">
+        <a href="index.html">Home</a>
+        <img src="https://i.pinimg.com/originals/f1/0f/f7/f10ff70a7155e5ab666bcdd1b45b726d.jpg" alt="Profile Picture" width="40">
+    </div>
+
+    <div class="login-bubble">
+        <div>Welcome to PostIt</div>
+        <p class="light-blue">Create an account</p>
+        <p>or</p>
+        <p>Please log in</p>
+        <div class="input-fields">
+            <input type="email" placeholder="Email" id="emailField"><br>
+            <input type="password" placeholder="Password" id="passwordField"><br>
+        </div>
+        <button class="btn" onclick="login()">Log In</button>
+        <p class="light-blue">Forgot password</p>
+    </div>
+
+    <script>
+        function login() {
+            var email = document.getElementById("emailField").value;
+            var password = document.getElementById("passwordField").value;
+
+            if (email && password) {
+                window.location.href = "index.html";
+            } else {
+                alert("Please fill in both fields!");
+            }
+        }
+    </script>
+
+</body>
+
+</html>
