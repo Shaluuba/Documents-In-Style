@@ -13,7 +13,6 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
             height: 100vh;
             margin: 0;
         }
@@ -30,7 +29,6 @@
             box-sizing: border-box;
             border-radius: 10px 10px 10px 10px;
             flex-wrap: wrap;
-            margin: 2%;
         }
 
         .post-bubble {
@@ -43,12 +41,13 @@
         }
 
         .side-bubble {
+            top: 80px;
             background-color: lightblue;
             padding: 10px;
             border-radius: 20px;
             width: 300px;
-            height: 500px;
-            position: fixed;
+            height: 1800px;
+            position: absolute;
         }
 
         .top-nav a {
@@ -91,6 +90,7 @@
 </head>
 
 <body>
+
 <div class="side-bubble" style=left:0px></div>
 <div class="side-bubble" style=right:0px></div>
 
