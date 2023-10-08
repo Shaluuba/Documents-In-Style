@@ -78,22 +78,22 @@
         }
 
         /* Descendant Selector */
-        .create-post p:not(.light-blue) {
+        .create-bubble p:not(.light-blue) {
             margin-bottom: 5px;
         }
 
         /* Child Selector */
-        .create-post > p:not(.light-blue) {
+        .create-bubble > p:not(.light-blue) {
             margin-top: 5px;
         }
 
         /* Adjacent Sibling Selector */
-        .create-post div + p:not(.light-blue) {
+        .create-bubble div + p:not(.light-blue) {
             color: grey;
         }
 
         /* General Sibling Selector */
-        .create-post div ~ p.light-blue {
+        .create-bubble div ~ p.light-blue {
             text-decoration: underline;
         }
 
@@ -110,16 +110,14 @@
     <div class="create-bubble">
         <div class="input-fields">
             <label for="Description">Post body</label>
-            <textarea name="text" id="" cols="30" rows="10">
-                Write about your day...
-            </textarea>
+            <textarea name="text" id="textField" cols="30" rows="10">Write about your day...</textarea>
         </div>
         
         <div>
             <form action="add_picture">
                 <p></p>
                 <label for="addPicture">Select a file</label>
-                <input type="file" name="addPicture" id="addPicture"> <br><br>
+                <input type="picture" name="addPicture" id="addPicture"> <br><br>
             </form>
 
         </div>
@@ -129,12 +127,9 @@
     <script>
         function addPost() {
             var text = document.getElementById("textField").value;
+            var picture = document.getElementById("addPicture").value;
 
-            if (text =! "") {
-                window.location.href = "index.html";
-            } else {
-                alert("Please write something in the text area!");
-            }
+            window.location.href = "index.html";
         }
     </script>
 
