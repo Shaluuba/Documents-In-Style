@@ -1,3 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width", initial-scale="1.0">
+    <title>Add post</title>
+    <style>
+        body {
+            background-color: white;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .top-nav {
+            background-color: grey;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 1px;
+            width: 100%;
+            box-sizing: border-box;
+            border-radius: 10px 10px 10px 10px;
+        }
+
+        .top-nav a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .top-nav a:hover {
+            background-color: lightgray;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        .create-bubble {
+            background-color: rgb(202, 202, 202);
+            padding: 40px;
+            border-radius: 20px;
+            width: 400px;
+            text-align: center;
+        }
+
+        .btn {
+            background-color: blue;
+            padding: 10px 40px;
+            border: none;
+            color: rgb(255, 255, 255);
+            cursor: pointer;
+            display: block;
+            margin: 20px auto;
+        }
+
+        .btn:hover {
+            background-color: darkblue;
+        }
+
+        .light-blue {
+            color: rgb(72, 209, 255);
+            margin: 20px 0;
+        }
+
+        .input-fields input {
+            margin-top: 10px;
+            padding: 40px;
+            width: 70%;
+            box-sizing: border-box;
+            font-weight: normal;
+        }
+
+        /* Descendant Selector */
+        .create-post p:not(.light-blue) {
+            margin-bottom: 5px;
+        }
+
+        /* Child Selector */
+        .create-post > p:not(.light-blue) {
+            margin-top: 5px;
+        }
+
+        /* Adjacent Sibling Selector */
+        .create-post div + p:not(.light-blue) {
+            color: grey;
+        }
+
+        /* General Sibling Selector */
+        .create-post div ~ p.light-blue {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="top-nav">
+        <a href="index.html">Home</a>
+        <img src="https://i.pinimg.com/originals/f1/0f/f7/f10ff70a7155e5ab666bcdd1b45b726d.jpg" alt="Profile Picture" width="40">
+    </div>
+
+    <div class="create-bubble">
+        <div class="input-fields">
+            <label for="Description">Post body</label>
+            <textarea name="text" id="" cols="30" rows="10">
+                Write about your day...
+            </textarea>
+        </div>
+        
+        <div>
+            <form action="add_picture">
+                <p></p>
+                <label for="addPicture">Select a file</label>
+                <input type="file" name="addPicture" id="addPicture"> <br><br>
+            </form>
+
+        </div>
+        <button class="btn" onclick="addPost()">Create post</button>
+    </div>
+
+    <script>
+        function addPost() {
+            var text = document.getElementById("textField").value;
+
+            if (text =! "") {
+                window.location.href = "index.html";
+            } else {
+                alert("Please write something in the text area!");
+            }
+        }
+    </script>
+
+</body>
 </html>
