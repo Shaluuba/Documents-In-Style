@@ -24,7 +24,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: sticky;
+            position: absolute;
             top: 1px;
             width: 100%;
             box-sizing: border-box;
@@ -109,15 +109,15 @@
 
     <div class="create-bubble">
         <div class="input-fields">
-            <label for="Description">Post body</label>
-            <textarea name="text" id="textField" cols="30" rows="10">Write about your day...</textarea>
+            <label for="text">Post body</label>
+            <textarea name="text" id="textField" cols="30" rows="10" placeholder="Write about your day..."></textarea>
         </div>
         
         <div>
             <form action="add_picture">
                 <p></p>
                 <label for="addPicture">Select a file</label>
-                <input type="picture" name="addPicture" id="addPicture"> <br><br>
+                <input type="file" name="addPicture" id="addPicture"> <br><br>
             </form>
 
         </div>
