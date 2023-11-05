@@ -72,6 +72,7 @@
             display: block;
             width: 100%;
         }
+
         .post-header {
             padding: 10px;
             display: flex;
@@ -82,9 +83,32 @@
             background-color: grey;
             width: 100%;
             border-radius: 10px 10px 10px 10px;
-            position: sticky;
+            position: relative;
             bottom: 0;
             text-align: center;
+        }
+        .user-menu{
+            position: relative;
+            display: inline-block;
+        }
+
+        #user-pic {
+            cursor: pointer;
+        }
+
+        .user-info {
+            display: none;
+            position: absolute;
+            background-color: white;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            right: 0;
+            min-width: 160px;
+            z-index: 1;
+            text-align: left;
+        }
+
+        #user-pic:hover + #user-dropdown-content, .dropdown-content:hover {
+            display: block;
         }
 
     </style>
@@ -96,13 +120,20 @@
 <div class="side-bubble" style=left:0px></div>
 <div class="side-bubble" style=right:0px></div>
 
-    <div class="top-nav">
-        <div > <a href="index.html">Home</a>
-            <span>|</span>
-            <a href="addPost.html">Add Post</a>
-        </div>
-        <img src="https://i.pinimg.com/originals/f1/0f/f7/f10ff70a7155e5ab666bcdd1b45b726d.jpg" alt="Profile Picture" width="40">
+<div class="top-nav">
+    <div> <a href="index.html">Home</a>
+        <span>|</span>
+        <a href="addPost.html">Add Post</a>
     </div>
+    <div class="user-menu">
+        <img src="https://i.pinimg.com/originals/f1/0f/f7/f10ff70a7155e5ab666bcdd1b45b726d.jpg" alt="Profile Picture" width="40" id="user-pic">
+        <div class="user-info" id="user-dropdown-info">
+            <p class="name">Your Name</p>
+            <p class="email">your@email.com</p>
+            <a href="#" class="logout">Logout</a>
+        </div>
+    </div>
+</div>
 
     <div class="post-bubble">
         <div class="post-header">
@@ -155,6 +186,52 @@
         <img src="https://seeklogo.com/images/F/facebook-like-logo-32FAB6926D-seeklogo.com.png" alt="Like button" width="40">
     </div>
 
+    </div>
+    <script>
+        const userPic = document.getElementById('user-pic');
+        const userInfo = document.getElementById('user-dropdown-info');
+
+        userPic.addEventListener('click', function (event) {
+            event.stopPropagation();
+
+            if (userInfo.style.display === 'block') {
+                userInfo.style.display = 'none';
+            } else {
+                userInfo.style.display = 'block';
+            }
+        });
+
+        document.body.addEventListener('click', function () {
+           userInfo.style.display = 'none'; // Menu closes when clicking elsewhere on the page
+        });
+    </script>
+<!--
+<script>
+    const uri = 'https://api.jsonbin.io/v3/b/6547e86312a5d376599549d4/latest';
+    function displayPosts(posts) {
+        const container = document.getElementById('post-container');
+        posts.forEach(post => {
+            const postDiv = document.createElement('div');
+            postDiv.className = 'post-bubble';
+                //??
+            container.appendChild(postDiv);
+        })
+    }
+
+    fetch('https://api.jsonbin.io/v3/b/6547e86312a5d376599549d4/latest')
+        .then(response => {
+            if (!response.ok) {throw new Error('Network error');
+            }
+            return response.json();
+        })
+        .then(posts => {
+            displayPosts(posts);
+        })
+        .catch(error => {
+            console.error('Fetch operation problem occurrred:', error);
+        });
+</script>
+-->
     <footer class="footer">
         <p>Autorid: Liisi Voitra, Markus Karl Mägi, Liisa Leit</p>
     </footer>
