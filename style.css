@@ -1,0 +1,119 @@
+
+body {
+    background-color: white;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: azure;
+
+}
+
+p{
+    font-family: Bahnschrift;
+}
+
+a{
+    font-family: Bahnschrift;
+    font-size: 20px;
+}
+
+.top-nav {
+    background-color: grey;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 1px;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 10px 10px 10px 10px;
+    flex-wrap: wrap;
+}
+
+.post-bubble {
+    background-color: rgb(202, 202, 202);
+    padding: 10px;
+    border-radius: 20px;
+    width: 40%;
+    text-align: left;
+    margin: 10px;
+    flex-direction: column;
+    background-image: url("https://img.freepik.com/premium-photo/abstract-background-light-cyan-felt-material-with-vignette-structure-light-cyan-texture-velvet_261860-2197.jpg");
+}
+
+.side-bubble {
+    top: 80px;
+    background-color: cadetblue;
+    padding: 10px;
+    border-radius: 20px;
+    width: 20%;
+    height: 2260px;
+    position: absolute;
+    flex-direction: column;
+}
+
+.top-nav a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.top-nav a:hover {
+    background-color: lightgray;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/* Descendant Selector */
+.post-bubble p:not(.light-blue) {
+    margin-bottom: 5px;
+}
+
+.center {
+    display: block;
+    width: 100%;
+}
+
+.post-header {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer {
+    background-color: grey;
+    width: 100%;
+    border-radius: 10px 10px 10px 10px;
+    position: relative;
+    bottom: 0px;
+    text-align: center;
+}
+.user-menu{
+    position: relative;
+    display: inline-block;
+}
+
+#user-pic {
+    cursor: pointer;
+}
+
+.user-info {
+    display: none;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    right: 0;
+    min-width: 160px;
+    z-index: 1;
+    text-align: left;
+    border-radius: 10px 10px 10px 10px;
+    padding: 10px;
+}
+
+#user-pic:hover + #user-dropdown-content, .dropdown-content:hover {
+    display: block;
+}
