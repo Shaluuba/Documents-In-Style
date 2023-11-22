@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up Page</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- Header component with navigation links -->
+<div class="top-nav">
+  <div class="nav-placeholder"></div>
+
+  <div class="navigation-links">
+    <a href="index.html">Home</a>
+    <span>|</span>
+    <a href="signup.html">Sign Up</a>
+  </div>
+
+  <div class="user-menu">
+    <img src="https://i.pinimg.com/originals/f1/0f/f7/f10ff70a7155e5ab666bcdd1b45b726d.jpg" alt="Profile Picture" width="40" id="user-pic">
+    <div class="user-info" id="user-dropdown-info">
+      <p class="name">Your Name</p>
+      <p class="email">your@email.com</p>
+      <a href="#" class="logout">Logout</a>
+    </div>
+  </div>
+</div>
+
+
+<!-- Signup form -->
+<div class="signup-form-container">
+  <form class="signup-form" id="signup-form" onsubmit="return validatePassword()">
+    <div class="form-field">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+    <div class="form-field">
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required>
+      <p id="password-error" style="color: red; display: none;">
+        Password is not valid. The password must be 8-15 characters long,
+        include at least one uppercase letter, two lowercase letters, one number,
+        start with an uppercase letter, and include an underscore.
+      </p>
+    </div>
+    <button type="submit" class="btn">Sign up</button>
+  </form>
+</div>
+
+<footer class="footer">
+  <p>Autorid: Liisi Voitra, Markus Karl Mägi, Liisa Leit. Copyright 2023<!DOCTYPE html>
+</footer>
+
+<script>
+  function validatePassword() {
+    // Prevent the default form submission
+    event.preventDefault();
+
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+    var passwordError = document.getElementById("password-error");
+
+    // Define the password validation regex
+    var passwordRegex = /^(?=.*[A-Z])(?=.*[a-z].*[a-z])(?=.*\d).*_.*$/;
+
+    // Check the length
+    var validLength = password.length >= 8 && password.length <= 15;
+    // Check if it starts with an uppercase letter
+    var startsWithUppercase = /^[A-Z]/.test(password);
+    // Check the rest of the conditions
+    var validConditions = passwordRegex.test(password);
+
+    var isValid = validLength && startsWithUppercase && validConditions;
+
+    if (email && isValid) {
+      // If email and password are valid, redirect to the home page
+      window.location.href = "index.html";
+    } else {
+      // If not valid, display error message
+      passwordError.style.display = "block";
+      if (!email) {
+        alert("Please fill in the email field!");
+      }
+    }
+  }
+</script>
+
+
+</body>
+</html>

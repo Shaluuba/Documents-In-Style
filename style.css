@@ -9,7 +9,6 @@ body {
     height: 100vh;
     margin: 0;
     background-color: azure;
-
 }
 
 p{
@@ -21,6 +20,56 @@ a{
     font-size: 20px;
 }
 
+.signup-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-field {
+    margin-bottom: 10px;
+}
+
+.form-field label {
+    display: block;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-field input {
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.signup-form button {
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    padding: 10px;
+    background-color: cadetblue;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.signup-form button:hover {
+    background-color: #5cb85c;
+}
+
+.signup-form-container {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 .top-nav {
     background-color: grey;
     padding: 10px;
@@ -28,11 +77,24 @@ a{
     justify-content: space-between;
     align-items: center;
     position: sticky;
-    top: 1px;
+    top: 0;
     width: 100%;
     box-sizing: border-box;
-    border-radius: 10px 10px 10px 10px;
-    flex-wrap: wrap;
+    border-radius: 10px;
+}
+
+.nav-placeholder {
+    width: 40px;
+}
+
+.navigation-links {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.navigation-links a {
+    padding: 0 10px;
 }
 
 .post-bubble {
@@ -60,13 +122,16 @@ a{
 .top-nav a {
     text-decoration: none;
     color: inherit;
+    padding: 5px 10px;
+    display: inline-block;
+    transition: background-color 0.3s;
 }
 
 .top-nav a:hover {
     background-color: lightgray;
-    padding: 5px;
     border-radius: 5px;
 }
+
 
 /* Descendant Selector */
 .post-bubble p:not(.light-blue) {
@@ -88,13 +153,13 @@ a{
     background-color: grey;
     width: 100%;
     border-radius: 10px 10px 10px 10px;
-    position: relative;
-    bottom: 0px;
+    position: absolute;
+    bottom: 0;
     text-align: center;
 }
-.user-menu{
-    position: relative;
-    display: inline-block;
+.user-menu {
+    display: flex;
+    align-items: center;
 }
 
 #user-pic {
