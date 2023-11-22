@@ -99,7 +99,7 @@ a{
 
 .post-bubble {
     background-color: rgb(202, 202, 202);
-    padding: 10px;
+    padding: 5px;
     border-radius: 20px;
     width: 40%;
     text-align: left;
@@ -182,3 +182,59 @@ a{
 #user-pic:hover + #user-dropdown-content, .dropdown-content:hover {
     display: block;
 }
+
+.login-bubble {
+    background-color: rgb(202, 202, 202);
+    padding: 40px;
+    border-radius: 20px;
+    width: 200px;
+    text-align: center;
+}
+
+.btn {
+    background-color: blue;
+    padding: 10px 20px;
+    border: none;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    display: block;
+    margin: 20px auto;
+}
+
+.btn:hover {
+    background-color: darkblue;
+}
+
+.light-blue {
+    color: rgb(72, 209, 255);
+    margin: 20px 0;
+}
+
+.input-fields input {
+    margin-top: 10px;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    font-weight: normal;
+}
+
+/* Descendant Selector */
+.login-bubble p:not(.light-blue) {
+    margin-bottom: 5px;
+}
+
+/* Child Selector */
+.login-bubble > p:not(.light-blue) {
+    margin-top: 5px;
+}
+
+/* Adjacent Sibling Selector */
+.login-bubble div + p:not(.light-blue) {
+    color: grey;
+}
+
+/* General Sibling Selector */
+.login-bubble div ~ p.light-blue {
+    text-decoration: underline;
+}
+
