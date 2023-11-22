@@ -153,8 +153,11 @@ a{
     background-color: grey;
     width: 100%;
     border-radius: 10px 10px 10px 10px;
-    position: absolute;
+    position: sticky;
     bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem;
     text-align: center;
 }
 .user-menu {
