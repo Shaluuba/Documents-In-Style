@@ -10,7 +10,6 @@ window.onload = function() {
                 let postDiv = document.createElement('div');
                 let postBubble = document.createElement('div');
                 postBubble.classList.add('post-bubble');
-                postBubble.classList.add('center');
 
                 let postHeader = document.createElement('div');
                 postHeader.classList.add('post-header');
