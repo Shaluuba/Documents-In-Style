@@ -1,6 +1,5 @@
 [
   {
-    "postBubble": {
       "class": "post-bubble",
       "postHeader": {
         "class": "post-header",
@@ -22,7 +21,6 @@
         "alt": "Like button",
         "width": 40
       }
-    }
   },
   {
     "postHeader": {
