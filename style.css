@@ -1,6 +1,8 @@
-
+html {
+    position: relative;
+    min-height: 100%;
+}
 body {
-    background-color: white;
     font-family: 'Courier New', monospace;
     font-weight: bold;
     display: flex;
@@ -104,6 +106,7 @@ a{
     width: 40%;
     text-align: left;
     margin: auto;
+    margin-top: 10px;
     flex-direction: column;
     background-image: url("https://img.freepik.com/premium-photo/abstract-background-light-cyan-felt-material-with-vignette-structure-light-cyan-texture-velvet_261860-2197.jpg");
 }
@@ -114,9 +117,9 @@ a{
     padding: 10px;
     border-radius: 20px;
     width: 20%;
-    height: 2260px;
+    height: 4000px;
     position: absolute;
-    flex-direction: column;
+    flex-direction: inherit;
 }
 
 .top-nav a {
@@ -157,13 +160,15 @@ a{
     background-color: grey;
     width: 100%;
     border-radius: 10px 10px 10px 10px;
-    position: sticky;
+    position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
     padding: 1rem;
     text-align: center;
+    height: 60px;
 }
+
 .user-menu {
     display: flex;
     align-items: center;
