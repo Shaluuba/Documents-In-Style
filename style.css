@@ -1,6 +1,6 @@
 html {
     position: relative;
-    min-height: 100%;
+    height: 100%;
 }
 body {
     font-family: 'Courier New', monospace;
@@ -8,9 +8,11 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
     margin: 0;
     background-color: azure;
+    position: relative;
+    min-height: 100%;
+    padding-bottom: 100px;
 }
 
 p{
@@ -50,7 +52,7 @@ a{
     font-family: 'Courier New', monospace;
     font-weight: bold;
     padding: 10px;
-    background-color: cadetblue;
+    background-color: darkslategrey;
     color: white;
     border: none;
     border-radius: 4px;
@@ -59,11 +61,11 @@ a{
 }
 
 .signup-form button:hover {
-    background-color: #5cb85c;
+    background-color: teal;
 }
 
 .signup-form-container {
-    background-color: #f9f9f9;
+    background-color: cadetblue;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -117,7 +119,7 @@ a{
     padding: 10px;
     border-radius: 20px;
     width: 20%;
-    height: 4000px;
+    height: 95.2%;
     position: absolute;
     flex-direction: inherit;
 }
@@ -166,7 +168,7 @@ a{
     right: 0;
     padding: 1rem;
     text-align: center;
-    height: 60px;
+    height: 50px;
 }
 
 .user-menu {
@@ -196,7 +198,7 @@ a{
 }
 
 .login-bubble {
-    background-color: rgb(202, 202, 202);
+    background-color: cadetblue;
     padding: 40px;
     border-radius: 20px;
     width: 200px;
@@ -204,21 +206,22 @@ a{
 }
 
 .btn {
-    background-color: blue;
+    background-color: darkslategrey;
     padding: 10px 20px;
     border: none;
     color: rgb(255, 255, 255);
     cursor: pointer;
     display: block;
     margin: 20px auto;
+    font-family: Bahnschrift;
 }
 
 .btn:hover {
-    background-color: darkblue;
+    background-color: teal;
 }
 
 .light-blue {
-    color: rgb(72, 209, 255);
+    color: lightcyan;
     margin: 20px 0;
 }
 
@@ -247,6 +250,34 @@ a{
 
 /* General Sibling Selector */
 .login-bubble div ~ p.light-blue {
+    text-decoration: underline;
+}
+
+.create-bubble {
+    background-color: cadetblue;
+    padding: 40px;
+    border-radius: 20px;
+    width: 400px;
+    text-align: center;
+}
+
+/* Descendant Selector */
+.create-bubble p:not(.light-blue) {
+    margin-bottom: 5px;
+}
+
+/* Child Selector */
+.create-bubble > p:not(.light-blue) {
+    margin-top: 5px;
+}
+
+/* Adjacent Sibling Selector */
+.create-bubble div + p:not(.light-blue) {
+    color: grey;
+}
+
+/* General Sibling Selector */
+.create-bubble div ~ p.light-blue {
     text-decoration: underline;
 }
 

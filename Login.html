@@ -5,99 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
+    <link rel="stylesheet" href="style.css">
     <style>
         body {
-            background-color: white;
-            font-family: 'Courier New', monospace;
-            font-weight: bold;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
             justify-content: center;
-            height: 100vh;
-            margin: 0;
         }
 
         .top-nav {
-            background-color: grey;
-            padding: 10px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
             position: absolute;
-            top: 1px;
-            width: 100%;
-            box-sizing: border-box;
-            border-radius: 10px 10px 10px 10px;
         }
-
-        .top-nav a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .top-nav a:hover {
-            background-color: lightgray;
-            padding: 5px;
-            border-radius: 5px;
-        }
-
-        .login-bubble {
-            background-color: rgb(202, 202, 202);
-            padding: 40px;
-            border-radius: 20px;
-            width: 200px;
-            text-align: center;
-        }
-
-        .btn {
-            background-color: blue;
-            padding: 10px 20px;
-            border: none;
-            color: rgb(255, 255, 255);
-            cursor: pointer;
-            display: block;
-            margin: 20px auto;
-        }
-
-        .btn:hover {
-            background-color: darkblue;
-        }
-
-        .light-blue {
-            color: rgb(72, 209, 255);
-            margin: 20px 0;
-        }
-
-        .input-fields input {
-            margin-top: 10px;
-            padding: 10px;
-            width: 100%;
-            box-sizing: border-box;
-            font-weight: normal;
-        }
-
-        /* Descendant Selector */
-        .login-bubble p:not(.light-blue) {
-            margin-bottom: 5px;
-        }
-
-        /* Child Selector */
-        .login-bubble > p:not(.light-blue) {
-            margin-top: 5px;
-        }
-
-        /* Adjacent Sibling Selector */
-        .login-bubble div + p:not(.light-blue) {
-            color: grey;
-        }
-
-        /* General Sibling Selector */
-        .login-bubble div ~ p.light-blue {
-            text-decoration: underline;
-        }
-
-
     </style>
 
 </head>
