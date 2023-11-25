@@ -18,6 +18,10 @@ body {
 p{
     font-family: Bahnschrift;
 }
+p1{
+    font-size: 15px;
+    font-family: Bahnschrift;
+}
 
 a{
     font-family: Bahnschrift;
@@ -85,6 +89,7 @@ a{
     width: 100%;
     box-sizing: border-box;
     border-radius: 10px;
+    height: 77px;
 }
 
 .nav-placeholder {
@@ -168,7 +173,7 @@ a{
     right: 0;
     padding: 1rem;
     text-align: center;
-    height: 50px;
+    height: 60px;
 }
 
 .user-menu {
