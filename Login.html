@@ -21,13 +21,11 @@
 <body>
 
 <div class="top-nav">
-    <div><a href="index.html">Home</a>
-        <span>|</span>
-        <a href="addPost.html">Add Post</a>
-    </div>
-    <div class="navigation-links">
-        <!-- Add more links as needed -->
+    <div class="navigation-links-left">
         <a href="index.html">Home</a>
+    </div>
+    <div class="navigation-links-right">
+        <!-- Add more links as needed -->
         <a href="signup.html">Sign Up</a>
         <!-- ... other links ... -->
     </div>
@@ -37,12 +35,18 @@
                  alt="Profile Picture"
                  width="40" id="user-pic">
         </a>
+        <div class="user-info" id="user-dropdown-info">
+            <p class="name">Your Name</p>
+            <p class="email">your@email.com</p>
+            <a href="#" class="logout">Logout</a>
+        </div>
     </div>
 </div>
 
     <div class="login-bubble">
         <div>Welcome to PostIt</div>
-        <p class="light-blue">Create an account</p>
+        <br>
+        <a style="color: lightcyan; font-size: 15px; " href="signup.html">Create an account</a>
         <p>or</p>
         <p>Please log in</p>
         <div class="input-fields">
@@ -66,6 +70,11 @@
         }
     </script>
 
+<footer class="footer">
+    <p>Autorid: Liisi Voitra, Markus Karl Mägi, Liisa Leit.<!DOCTYPE html>
+        <br>
+        <a style="font-size: 17px">Copyright © 2023 University of Tartu, Computer Science, All rights reserved</a>
+</footer>
 </body>
 
 </html>

@@ -27,6 +27,9 @@ a{
     font-family: Bahnschrift;
     font-size: 20px;
 }
+span{
+    font-size: 30px;
+}
 
 .signup-form {
     display: flex;
@@ -96,9 +99,15 @@ a{
     width: 40px;
 }
 
-.navigation-links {
+.navigation-links-right{
     display: flex;
-    justify-content: center;
+    justify-content: right;
+    flex-grow: 1;
+}
+
+.navigation-links-left{
+    display: flex;
+    justify-content: left;
     flex-grow: 1;
 }
 
@@ -165,7 +174,6 @@ a{
 }
 .footer {
     background-color: grey;
-    width: 100%;
     border-radius: 10px 10px 10px 10px;
     position: absolute;
     bottom: 0;
