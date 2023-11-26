@@ -18,7 +18,8 @@
       "src": "https://seeklogo.com/images/F/facebook-like-logo-32FAB6926D-seeklogo.com.png",
       "alt": "Like button",
       "width": 40
-    }
+    },
+    "likeCount": 0
   },
   {
     "postHeader": {
@@ -30,11 +31,13 @@
       "date": "Sept 26, 2023"
     },
     "postContent": "Mul on viimane aasta ülikoolis. Siis olen paberitega loomaarst!!!",
+    "src": "https://seeklogo.com/images/F/facebook-like-logo-32FAB6926D-seeklogo.com.png",
     "likeButton": {
       "src": "https://seeklogo.com/images/F/facebook-like-logo-32FAB6926D-seeklogo.com.png",
       "alt": "Like button",
       "width": 40
     }
+
   },
   {
     "postHeader": {
@@ -67,11 +70,13 @@
       "date": "Dec 18, 2022"
     },
     "postContent": "Palju õnne sünnipäevaks, Mari. Soovivad Mati ja Laura!",
+    "width": 40,
     "likeButton": {
       "src": "https://seeklogo.com/images/F/facebook-like-logo-32FAB6926D-seeklogo.com.png",
       "alt": "Like button",
       "width": 40
     }
+
   },
   {
     "postHeader": {
@@ -167,6 +172,7 @@
       "alt": "Like button",
       "width": 40
     }
+
   },
   {
     "postHeader": {

@@ -42,18 +42,32 @@ window.onload = function() {
                 postContent.textContent = jsonData.postContent;
                 postBubble.appendChild(postContent);
 
-                // Like Button
-                let likeButton = document.createElement('img');
-                likeButton.src = jsonData.likeButton.src;
-                likeButton.alt = jsonData.likeButton.alt;
-                likeButton.width = jsonData.likeButton.width;
-                postBubble.appendChild(likeButton);
+// Like Button and Like Count
+                let likeContainer = document.createElement('div');
+                likeContainer.classList.add('like-container');
 
+                let likeButton = document.createElement('button');
+                likeButton.innerHTML = `<img src="${jsonData.likeButton ? jsonData.likeButton.src : 'default-like-button.png'}" alt="${jsonData.likeButton ? jsonData.likeButton.alt : 'Like button'}" width="${jsonData.likeButton ? jsonData.likeButton.width : 40}">`;
+                likeContainer.appendChild(likeButton);
+
+                let likeCount = document.createElement('span');
+                likeCount.textContent = jsonData.likeCount || 0;
+                likeContainer.appendChild(likeCount);
+
+                // Event listener for the like button
+                likeButton.addEventListener('click', function() {
+                    likeCount.textContent = parseInt(likeCount.textContent) + 1;
+                });
+
+                postBubble.appendChild(likeContainer);
                 postDiv.appendChild(postBubble);
                 parentDiv.appendChild(postDiv);
             });
 
             let body = document.querySelector("body");
             body.appendChild(parentDiv);
+        })
+        .catch(error => {
+            console.error('Error fetching JSON:', error);
         });
 }
