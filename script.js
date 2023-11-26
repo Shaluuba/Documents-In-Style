@@ -6,7 +6,7 @@ window.onload = function() {
 
             let parentDiv = document.createElement('div');
 
-            json.forEach(jsonData => {
+            json.forEach((jsonData, index) => {
                 let postDiv = document.createElement('div');
                 let postBubble = document.createElement('div');
                 postBubble.classList.add('post-bubble');
@@ -51,6 +51,7 @@ window.onload = function() {
                 likeContainer.appendChild(likeButton);
 
                 let likeCount = document.createElement('span');
+                likeCount.id = 'likeCount-' + index; // Assign unique ID
                 likeCount.textContent = jsonData.likeCount || 0;
                 likeContainer.appendChild(likeCount);
 
@@ -66,6 +67,14 @@ window.onload = function() {
 
             let body = document.querySelector("body");
             body.appendChild(parentDiv);
+
+            // Reset Button Event Listener
+            document.querySelector('.btn').addEventListener('click', function() {
+                for (let i = 0; i < json.length; i++) {
+                    document.getElementById('likeCount-' + i).textContent = 0;
+                }
+            });
+
         })
         .catch(error => {
             console.error('Error fetching JSON:', error);
