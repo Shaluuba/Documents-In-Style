@@ -1,0 +1,14 @@
+{
+  "name": "documents-in-style",
+  "version": "1.0.0",
+  "description": "npm install",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "vuex": "^4.0.2"
+  }
+}
