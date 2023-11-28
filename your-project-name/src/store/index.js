@@ -1,4 +1,5 @@
 import { createStore } from 'vuex';
+//import Vuex from 'vuex';
 
 
 
@@ -207,7 +208,13 @@ export default createStore({
   mutations: {
     UPDATE_POSTS(state, newPosts) {
       state.posts = newPosts;
-    }
+    },
+    RESET_LIKES(state) {
+      state.posts = state.posts.map(post => ({
+        ...post,
+        likeCount: 0
+      }));
+    },
   },
   actions: {
     fetchPosts({ commit }) {
@@ -215,8 +222,12 @@ export default createStore({
       // For now, the posts are statically defined in the state
       const postData = this.state.posts;
       commit('UPDATE_POSTS', postData);
-    }
+    },
+    resetAllLikes({ commit }) {
+      commit('RESET_LIKES');
+    },
   },
+
   getters: {
     allPosts: state => state.posts
   }

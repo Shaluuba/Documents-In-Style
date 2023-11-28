@@ -42,7 +42,7 @@ window.onload = function() {
                 postContent.textContent = jsonData.postContent;
                 postBubble.appendChild(postContent);
 
-// Like Button and Like Count
+                // Like Button and Like Count
                 let likeContainer = document.createElement('div');
                 likeContainer.classList.add('like-container');
 

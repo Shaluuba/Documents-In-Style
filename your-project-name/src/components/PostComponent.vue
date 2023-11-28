@@ -14,9 +14,9 @@
                width="40" id="user-pic">
         </div>
     </div>
-  
+
   <div class="push">
-    <button class="btn">Reset likes</button>
+    <button class="btn" @click="resetLikes">Reset likes</button>
   </div>
 
     <div>
@@ -28,9 +28,8 @@
         <img v-if="post.postImage" :src="post.postImage.src" :alt="post.postImage.alt" :class="post.postImage.class">
         <p>{{ post.postContent }}</p>
         <div class="like-section">
-          <img :src="post.likeButton.src" :alt="post.likeButton.alt" :width="post.likeButton.width">
+          <img :src="post.likeButton.src" :alt="post.likeButton.alt" :width="post.likeButton.width" @click="likePost(post)">
           <span>{{ post.likeCount }}</span>
-          <button @click="likePost(post)">Like</button>
         </div>
       </div>
     </div>
@@ -38,6 +37,10 @@
   <div class="footer">
     <p>Autorid: Liisi Voitra, Markus Karl Mägi, Liisa Leit.</p>
       <a style="font-size: 17px">Copyright © 2023 University of Tartu, Computer Science, All rights reserved</a>
+  </div>
+
+  <div class="push">
+    <button class="btn" @click="resetLikes">Reset likes</button>
   </div>
   </template>
 
@@ -51,9 +54,16 @@
       return this.allPosts;
     }
   },
-  methods: {
-    ...mapActions(['likePost']),
-  },
+    methods: {
+      ...mapActions(['likePost']),
+      likePost(post) {
+        // Increment the like count for the post
+        post.likeCount++;
+      },
+      resetLikes() {
+        this.$store.dispatch('resetAllLikes');
+      },
+    },
   created() {
     this.$store.dispatch('fetchPosts');
   }
