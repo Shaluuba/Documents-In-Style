@@ -1,35 +1,26 @@
 <template>
     <div class="top-nav">
       <div class="navigation-links-left">
-        <a href="index.html">Home</a>
-        <span>|</span>
-        <a href="addPost.html">Add Post</a>
+        <a href="PostComponent.vue">Home</a>
       </div>
       <div class="navigation-links-right">
         <!-- Add more links as needed -->
-        <a href="signup.html">Sign Up</a>
+        <a href="Signup.vue">Sign Up</a>
         <!-- ... other links ... -->
       </div>
-      <div class="user-menu">
-        <a href="login.html"> <!-- Add this line -->
+      <div style="padding: 10px">
           <img src="https://i.pinimg.com/originals/f1/0f/f7/f10ff70a7155e5ab666bcdd1b45b726d.jpg"
                alt="Profile Picture"
                width="40" id="user-pic">
-        </a>
-        <div class="user-info" id="user-dropdown-info">
-          <p class="name">Your Name</p>
-          <p class="email">your@email.com</p>
-          <a href="#" class="logout">Logout</a>
         </div>
-      </div>
     </div>
   
   <div class="push">
     <button class="btn">Reset likes</button>
   </div>
 
-    <div class="post-bubble">
-      <div v-for="post in posts" :key="post.postHeader.date" class="post">
+    <div>
+      <div v-for="post in posts" :key="post.postHeader.date" class="post-bubble">
         <div class="post-header">
           <img :src="post.postHeader.profilePicture.src" :alt="post.postHeader.profilePicture.alt" :width="post.postHeader.profilePicture.width">
           <span>{{ post.postHeader.date }}</span>
@@ -43,6 +34,7 @@
         </div>
       </div>
     </div>
+
   <div class="footer">
     <p>Autorid: Liisi Voitra, Markus Karl Mägi, Liisa Leit.</p>
       <a style="font-size: 17px">Copyright © 2023 University of Tartu, Computer Science, All rights reserved</a>
@@ -188,7 +180,7 @@ span{
 
 .post-bubble {
     background-color: rgb(202, 202, 202);
-    padding: 5px;
+    padding: 15px;
     border-radius: 20px;
     width: 60%;
     text-align: left;
@@ -197,17 +189,6 @@ span{
     margin-bottom: 10px;
     flex-direction: column;
   background-color: turquoise;
-}
-
-.side-bubble {
-    top: 80px;
-    background-color: cadetblue;
-    padding: 10px;
-    border-radius: 20px;
-    width: 20%;
-    height: 95.2%;
-    position: absolute;
-    flex-direction: inherit;
 }
 
 .top-nav a {
@@ -237,10 +218,6 @@ span{
 
 }
 
-.margin{
-    margin: 10px;
-}
-
 .post-header {
     padding: 10px;
     display: flex;
@@ -259,38 +236,12 @@ span{
     height: 80px;
 }
 
-.user-menu {
-    display: flex;
-    align-items: center;
-}
-
 #user-pic {
     cursor: pointer;
 }
 
-.user-info {
-    display: none;
-    position: absolute;
-    background-color: white;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    right: 0;
-    min-width: 160px;
-    z-index: 1;
-    text-align: left;
-    border-radius: 10px 10px 10px 10px;
-    padding: 10px;
-}
-
 #user-pic:hover + #user-dropdown-content, .dropdown-content:hover {
     display: block;
-}
-
-.login-bubble {
-    background-color: cadetblue;
-    padding: 40px;
-    border-radius: 20px;
-    width: 200px;
-    text-align: center;
 }
 
 .btn {
@@ -306,11 +257,6 @@ span{
 
 .btn:hover {
     background-color: teal;
-}
-
-.light-blue {
-    color: lightcyan;
-    margin: 20px 0;
 }
 
 .input-fields input {
@@ -366,7 +312,6 @@ span{
 
 /* General Sibling Selector */
 .create-bubble div ~ p.light-blue {
-    text-decoration: underline;
-
+    text-decoration: underline;}
 </style>
 }
